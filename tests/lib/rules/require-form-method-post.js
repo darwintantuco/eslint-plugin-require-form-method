@@ -20,11 +20,19 @@ const defaultErrors = [
 ruleTester.run("require-form-method-post", rule, {
   valid: [
     { code: `<form method="post" onSubmit={handleSubmit}></form>` },
+    {
+      code: `<form {...{ className }} data-testid='form' onSubmit={handleSubmit} method="post"></form>`,
+    },
     { code: `<form method="POST"></form>` },
     { code: `<form METHOD="POST"></form>` },
   ],
   invalid: [
-    { code: `<form onSubmit={handleSubmit}></form>`, errors: defaultErrors },
+    { code: `<form></form>`, errors: defaultErrors },
     { code: `<form method="get"></form>`, errors: defaultErrors },
+    { code: `<form onSubmit={handleSubmit}></form>`, errors: defaultErrors },
+    {
+      code: `<form {...{ className }} data-testid='form' onSubmit={handleSubmit}></form>`,
+      errors: defaultErrors,
+    },
   ],
 });
