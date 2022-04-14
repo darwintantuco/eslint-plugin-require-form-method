@@ -13,9 +13,7 @@ const parserOptions = {
 
 const ruleTester = new RuleTester({ parserOptions });
 
-const defaultErrors = [
-  { message: 'Form tags require explicit `method="POST"`' },
-];
+const defaultErrors = [{ message: 'Form tags require explicit method="POST"' }];
 
 ruleTester.run("require-form-method-post", rule, {
   valid: [
@@ -23,16 +21,17 @@ ruleTester.run("require-form-method-post", rule, {
     {
       code: `<form {...{ className }} data-testid='form' onSubmit={handleSubmit} method="post"></form>`,
     },
+    { code: `<form method="get"></form>`, errors: defaultErrors },
     { code: `<form method="POST"></form>` },
     { code: `<form METHOD="POST"></form>` },
   ],
   invalid: [
     { code: `<form></form>`, errors: defaultErrors },
-    { code: `<form method="get"></form>`, errors: defaultErrors },
     { code: `<form onSubmit={handleSubmit}></form>`, errors: defaultErrors },
     {
       code: `<form {...{ className }} data-testid='form' onSubmit={handleSubmit}></form>`,
       errors: defaultErrors,
     },
+    { code: `<form method="invalid"></form>`, errors: defaultErrors },
   ],
 });

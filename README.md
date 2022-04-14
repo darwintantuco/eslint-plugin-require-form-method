@@ -2,9 +2,11 @@
 
 ![Node.js CI](https://github.com/darwintantuco/eslint-plugin-require-form-method-post/workflows/Node.js%20CI/badge.svg?branch=master)
 
-Disallow form tags without method post
+Disallow form tags without explicit method="post"
 
 Prevents sensitive data appearing on URLs
+
+Allow form tags with explicit method="get"
 
 ![](demo.png)
 
