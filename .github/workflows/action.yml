@@ -8,7 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x]
+        node-version: [12.x]
 
     steps:
       - uses: actions/checkout@v2
@@ -22,3 +22,6 @@ jobs:
 
       - name: Run tests
         run: yarn test
+
+      - name: Run linters
+        run: yarn prettier:check

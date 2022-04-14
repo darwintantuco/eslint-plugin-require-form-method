@@ -1,11 +1,12 @@
 {
   "name": "eslint-plugin-require-form-method-post",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Disallow form tags without method post",
   "keywords": [
     "eslint",
     "eslintplugin",
-    "eslint-plugin"
+    "eslint-plugin",
+    "security"
   ],
   "author": "Darwin Tantuco",
   "main": "lib/index.js",
@@ -33,5 +34,5 @@
       "pre-push": "yarn ci"
     }
   },
-  "license": "ISC"
+  "license": "MIT"
 }
