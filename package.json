@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-require-form-method-post",
   "version": "1.0.1",
-  "description": "Disallow form tags without method post",
+  "description": "Disallow form tags without explict method=\"post\"",
   "keywords": [
     "eslint",
     "eslintplugin",
