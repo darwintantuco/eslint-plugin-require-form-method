@@ -17,15 +17,20 @@ const defaultErrors = [{ message: 'Form tags require explicit method="POST"' }];
 
 ruleTester.run("require-form-method-post", rule, {
   valid: [
+    // Allow form tags with explicit method="post"
     { code: `<form method="post" onSubmit={handleSubmit}></form>` },
     {
       code: `<form {...{ className }} data-testid='form' onSubmit={handleSubmit} method="post"></form>`,
     },
-    { code: `<form method="get"></form>`, errors: defaultErrors },
+    // Allow form tags with explicit method="get"
+    { code: `<form method="get"></form>` },
+    { code: `<form className='form' method="get"></form>` },
+    // Case insensitive
     { code: `<form method="POST"></form>` },
     { code: `<form METHOD="POST"></form>` },
   ],
   invalid: [
+    // Disallow form tags without explicit method="post"
     { code: `<form></form>`, errors: defaultErrors },
     { code: `<form onSubmit={handleSubmit}></form>`, errors: defaultErrors },
     {
