@@ -25,6 +25,16 @@ ruleTester.run("require-form-method-post", rule, {
     // Allow form tags with explicit method="get"
     { code: `<form method="get"></form>` },
     { code: `<form className='form' method="get"></form>` },
+    // Multiline
+    {
+      code: `<form
+               method="post"
+               className={className}
+               onSubmit={handleSubmit}
+               {...rest}
+             >
+             </form>`,
+    },
     // Case insensitive
     { code: `<form method="POST"></form>` },
     { code: `<form METHOD="POST"></form>` },
@@ -38,5 +48,14 @@ ruleTester.run("require-form-method-post", rule, {
       errors: defaultErrors,
     },
     { code: `<form method="invalid"></form>`, errors: defaultErrors },
+    {
+      code: `<form
+               className={className}
+               onSubmit={handleSubmit}
+               {...rest}
+             >
+             </form>`,
+      errors: defaultErrors,
+    },
   ],
 });
