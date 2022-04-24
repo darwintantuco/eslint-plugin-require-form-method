@@ -1,7 +1,7 @@
 "use strict";
 
 const RuleTester = require("eslint").RuleTester;
-const rule = require("../../../lib/rules/require-form-method-post");
+const rule = require("../../../lib/rules/require-form-method");
 
 const parserOptions = {
   ecmaVersion: 2018,
@@ -13,9 +13,11 @@ const parserOptions = {
 
 const ruleTester = new RuleTester({ parserOptions });
 
-const defaultErrors = [{ message: 'Form tags require explicit method="POST"' }];
+const defaultErrors = [
+  { message: "Form tags require explicit method attribute" },
+];
 
-ruleTester.run("require-form-method-post", rule, {
+ruleTester.run("require-form-method", rule, {
   valid: [
     // Allow form tags with explicit method="post"
     { code: `<form method="post" onSubmit={handleSubmit}></form>` },
@@ -40,7 +42,7 @@ ruleTester.run("require-form-method-post", rule, {
     { code: `<form METHOD="POST"></form>` },
   ],
   invalid: [
-    // Disallow form tags without explicit method="post"
+    // Disallow form tags without explicit method
     { code: `<form></form>`, errors: defaultErrors },
     { code: `<form onSubmit={handleSubmit}></form>`, errors: defaultErrors },
     {
