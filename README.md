@@ -4,7 +4,7 @@
 
 Disallow form tags without explicit method attribute
 
-Prevents sensitive data appearing on URLs
+Prevents sensitive data appearing on URLs accidentally
 
 ![](demo.png)
 
