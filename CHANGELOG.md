@@ -2,6 +2,12 @@
 
 All changes on this project will be documented in this file.
 
+## [1.0.2] - April 24, 2022
+
+- Rename package from eslint-plugin-require-form-method-post to eslint-plugin-require-form-method
+- Deprecate eslint-plugin-require-form-method-post
+- Publish eslint-plugin-require-form-method
+
 ## [1.0.1] - April 14, 2022
 
 - Allow form tags with explicit method="get"
