@@ -2,12 +2,6 @@
   "name": "eslint-plugin-require-form-method",
   "version": "1.0.2",
   "description": "Disallow form tags without explicit method attribute",
-  "keywords": [
-    "eslint",
-    "eslintplugin",
-    "eslint-plugin",
-    "security"
-  ],
   "author": "Darwin Tantuco",
   "main": "lib/index.js",
   "scripts": {
@@ -34,5 +28,15 @@
       "pre-push": "yarn ci"
     }
   },
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "security"
+  ],
+  "homepage": "https://github.com/darwintantuco/eslint-plugin-require-form-method",
+  "bugs": {
+    "url": "https://github.com/darwintantuco/eslint-plugin-require-form-method/issues"
+  }
 }
