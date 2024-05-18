@@ -26,6 +26,8 @@ ruleTester.run("require-form-method", rule, {
     },
     // Allow form tags with explicit method="get"
     { code: `<form method="get"></form>` },
+    // Allow form tags with explicit method="dialog"
+    { code: `<form method="dialog"></form>` },
     { code: `<form className='form' method="get"></form>` },
     // Multiline
     {

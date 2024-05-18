@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-require-form-method",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Disallow form tags without explicit method attribute",
   "author": "Darwin Tantuco",
   "main": "lib/index.js",
@@ -35,6 +35,7 @@
     "eslint-plugin",
     "security"
   ],
+  "repository": "git@github.com:darwintantuco/eslint-plugin-require-form-method.git",
   "homepage": "https://github.com/darwintantuco/eslint-plugin-require-form-method",
   "bugs": {
     "url": "https://github.com/darwintantuco/eslint-plugin-require-form-method/issues"
